@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIUB CGPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1>AIUB CGPA Calculator</h1>
+        <div class="logo">
+            <img src="img/AIUB.png" alt="AIUB Logo" width="50" height="50">
+        </div>   
+
+        <form id="cgpaForm" novalidate>
+            <div class="form-group">
+                <label for="prevSemesters">
+                    <span style="color: red;">*</span> Enter Your Current Semester:
+                </label>
+                <input type="number" id="prevSemesters" required min="0">
+            </div>
+        
+
+            <div class="form-group">
+                <label for="prevCredits">
+                    <span style="color: red;">*</span> Total Credits Completed:
+                </label>
+                <input type="number" id="prevCredits" required min="0" >
+            </div>
+
+            <div class="form-group">
+                <label for="prevPoints">
+                    <span style="color: red;">*</span> Total Grade Points Accumulated (TGP) :
+                </label>
+                <div class="tgp-calculator">
+                    <input type="number" id="prevPoints" min="0" step="0.01" required placeholder="TGP Total Points">
+                    <button type="button" id="calculateTGP" class="btn-secondary">TGP Calculator</button>
+                </div>
+                <div id="tgpCalculator" class="hidden">
+                    <h3>TGP Calculator</h3>
+                    <h6 style="color: brown;">*Go to the AIUB portal and navigate to the "Grade Reports" section. Then, select "By Semester," where you can view the TGP total points for each semester. ("If you're in the 1st semester, Use your TGP as 0.0")</h6>
+                    <div id="tgpInputContainer">
+                        <div class="tgp-input-group">
+                            <label for="tgp1">1st Semester TGP: </label>                           
+                            <input type="number" id="tgp1" class="tgpInput" min="0" step="0.01"  placeholder="Enter Course Name">
+                        </div>
+                        <div class="tgp-input-group">
+                            <label for="tgp2">2nd Semester TGP:</label>
+                            <input type="number" id="tgp2" class="tgpInput" min="0" step="0.01" placeholder="Enter Course Name">
+                        </div>
+                    </div>
+                    <button type="button" id="addTGPInput" class="btn-secondary">Add TGP Input</button>
+                    <button type="button" id="calculateTotalTGP" class="btn-primary">Calculate Total TGP</button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <h2>Current Semester Courses</h2>
+                <div id="coursesContainer"></div>
+                <button type="button" id="addCourse" class="btn-secondary">Add Another Course</button>
+            </div>
+
+            <button type="submit" id="calculateCGPA" class="btn-primary">Calculate CGPA</button>
+        </form>
+
+        <div id="result" class="hidden">
+            <h2>Results</h2>
+            <p id="gpaResult"></p>
+            <p id="cgpaResult"></p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>Empowering students to track their academic journey with precision and ease.</p>
+        <p>&copy; 2024 Md. Daud Ibrahim | AIUB CGPA Calculator. All rights reserved.</p>
+        <a href="#home" class="back-to-top">Back to Top <i class="fas fa-chevron-up"></i></a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

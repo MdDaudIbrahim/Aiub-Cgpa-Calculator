@@ -1,0 +1,389 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --container-background: white;
+    --input-border: #ddd;
+    --placeholder-color: #999;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    width: 95%;
+    max-width: 600px;
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    background-color: var(--container-background);
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input[type="number"],
+input[type="text"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+input::placeholder {
+    color: var(--placeholder-color);
+    font-style: italic;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow);
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+#result {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #e8f5e9;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+#result h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#result p {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.course {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.suggestions {
+    border: 1px solid var(--input-border);
+    max-height: 150px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    width: calc(100% - 2rem);
+    display: none;
+    z-index: 10;
+    border-radius: 0 0 8px 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.suggestions div {
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestions div:hover {
+    background-color: #f0f0f0;
+}
+
+.tgp-calculator {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-end;
+}
+
+.tgp-calculator input {
+    flex-grow: 1;
+}
+
+#tgpCalculator {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+#tgpCalculator h3 {
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+}
+
+#tgpInputContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.tgp-input-group {
+    flex: 1 1 calc(33.333% - 1rem);
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.tgp-input-group label {
+    font-weight: 600;
+}
+
+.tgpInput {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid var(--input-border);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tgpInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+#addTGPInput {
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+@media (max-width: 600px) {
+    .tgp-calculator {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .tgp-input-group {
+        flex: 1 1 100%;
+    }
+
+    #tgpInputContainer {
+        flex-direction: column;
+    }
+}
+
+/* Logo styles */
+.logo {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Container adjustment */
+.container {
+    position: relative;
+    padding-top: 40px;
+    margin-top: 40px;
+    width: 95%;
+    max-width: 600px;
+}
+
+/* Media query for small mobile screens */
+@media screen and (max-width: 480px) {
+    .logo {
+        top: -25px;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .container {
+        padding-top: 30px;
+        margin-top: 30px;
+    }
+}
+
+/* Media query for tablets and larger screens */
+@media screen and (min-width: 768px) {
+    .logo {
+        top: -45px;
+        left: -20px;
+        transform: none;
+    }
+
+    .logo img {
+        width: 75px;
+    }
+
+    .container {
+        padding-top: 20px;
+        margin-top: 60px;
+    }
+}
+
+/* Media query for larger desktop screens */
+@media screen and (min-width: 1200px) {
+    .logo {
+        top: -55px;
+        left: -30px;
+    }
+
+    .logo img {
+        width: 82px;
+    }
+
+    .container {
+        margin-top: 70px;
+    }
+}
+
+/* Existing styles */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --container-background: white;
+    --input-border: #ddd;
+    --placeholder-color: #999;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------------------------------------------------------------- */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #45a049;
+    --text-color: #333;
+    --background-color: #f9f9f9;
+}
+
+/* Footer container */
+.footer-bottom {
+    background-color: #243342; /* Dark background */
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Text styling for the footer */
+.footer-bottom p {
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #95a5a6;
+}
+
+.back-to-top {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for back to top button */
+.back-to-top:hover {
+    color: var(--secondary-color);
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 40px;
+    }
+}
+
+/* Remove number input spinner in WebKit browsers (Chrome, Safari) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Hides the spinner */
+  margin: 0; /* Prevents any potential margin issues */
+}
+
+input[type="number"] {
+  appearance: textfield; 
+}
