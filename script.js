@@ -300,7 +300,7 @@ addTGPInputBtn.addEventListener('click', () => {
         semesterCount++;
         tgpInputContainer.appendChild(createTGPInputElement(semesterCount));
     } else {
-        alert(`You can only input TGP up to the ${getOrdinal(maxAllowedTGPInputs)} semester based on your completed semesters.`);
+        alert(`Please Enter Your Current Semester.`);
     }
 });
 
