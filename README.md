@@ -13,6 +13,8 @@
 
 ## 🤔 Introduction
 
+Live Link -->   https://mddaudibrahim.github.io/Aiub-Cgpa-Calculator/
+
 Navigating academic progress can sometimes feel daunting, especially when keeping track of your Cumulative Grade Point Average (CGPA). The **AIUB CGPA Calculator** is a simple, client-side web application designed specifically for students of American International University-Bangladesh (AIUB) to easily calculate their current semester and cumulative CGPA.
 
 Say goodbye to manual calculations and spreadsheets! This tool allows you to input your previous semester's academic data and add your current semester's courses, grades, and credits to get an instant, accurate calculation of your updated CGPA. It even includes a handy utility to help sum up your previous Total Grade Points (TGP) from the AIUB portal.
